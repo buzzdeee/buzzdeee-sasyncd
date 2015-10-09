@@ -12,9 +12,9 @@ class sasyncd::config (
   $mode,
 ) {
   file { '/etc/sasyncd.conf':
-    owner    => 'root',
-    group    => '0',
-    mode     => '0600',
-    template => 'sasyncd/sasyncd.conf.erb',
+    owner   => 'root',
+    group   => '0',
+    mode    => '0600',
+    content => template('sasyncd/sasyncd.conf.erb'),
   }
 }
