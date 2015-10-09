@@ -3,10 +3,12 @@
 
 class sasyncd::service (
   $ensure,
+  $enable,
   $flags,
 ) {
   service { 'sasyncd':
     ensure => $ensure,
+    enable => $enable,
     flags  => $flags,
   }
 }
