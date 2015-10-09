@@ -7,7 +7,7 @@ class sasyncd::config (
   $interface,
   $interfacegroup,
   $flushmode,
-  $control, 
+  $control,
   $listen_on,
   $mode,
 ) {

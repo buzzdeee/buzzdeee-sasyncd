@@ -2,8 +2,8 @@
 # takes care about service management
 
 class sasyncd::service (
-  ensure,
-  flags,
+  $ensure,
+  $flags,
 ) {
   service { 'sasyncd':
     ensure => $ensure,

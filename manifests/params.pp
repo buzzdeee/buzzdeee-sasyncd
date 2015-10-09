@@ -6,7 +6,7 @@ class sasyncd::params {
   $interfacegroup = 'carp'
   $flushmode = 'startup'
   $control = 'isakmpd'
-  $listen_on = undef 
+  $listen_on = undef
   $mode = undef
   $service_ensure = 'running'
   $service_enable = true

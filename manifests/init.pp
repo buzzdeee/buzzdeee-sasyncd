@@ -37,6 +37,7 @@
 #
 class sasyncd (
   $sharedkey,
+  $peers,
   $interface = $::sasyncd::params::interface,
   $interfacegroup = $::sasyncd::params::interfacegroup,
   $flushmode = $::sasyncd::params::flushmode,
@@ -45,7 +46,7 @@ class sasyncd (
   $mode = $::sasyncd::params::mode,
   $service_ensure = $::sasyncd::params::service_ensure,
   $service_enable = $::sasyncd::params::service_enable,
-  $service_flags = $::sasyncd::params::service_flags, 
+  $service_flags = $::sasyncd::params::service_flags,
 ) inherits sasyncd::params {
 
   if $service_ensure == 'running' {
