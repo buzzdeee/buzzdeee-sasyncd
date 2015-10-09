@@ -1,0 +1,14 @@
+{
+  "name": "buzzdeee-sasyncd",
+  "version": "0.1.0",
+  "author": "buzzdeee",
+  "summary": "A module to manage sasyncd",
+  "license": "Apache 2.0",
+  "source": "https://github.com/buzzdeee/buzzdeee-sasyncd.git",
+  "project_page": "https://github.com/buzzdeee/buzzdeee-sasyncd",
+  "issues_url": "https://github.com/buzzdeee/buzzdeee-sasyncd/issues",
+  "dependencies": [
+    {"name":"puppetlabs-stdlib","version_requirement":">= 1.0.0"}
+  ]
+}
+
