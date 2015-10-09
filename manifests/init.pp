@@ -35,7 +35,44 @@
 #
 # Copyright 2015 Your name here, unless otherwise noted.
 #
-class sasyncd {
+class sasyncd (
+  $sharedkey,
+  $interface = $::sasyncd::params::interface,
+  $interfacegroup = $::sasyncd::params::interfacegroup,
+  $flushmode = $::sasyncd::params::flushmode,
+  $control = $::sasyncd::params::control,
+  $listen_on = $::sasyncd::params::listen_on,
+  $mode = $::sasyncd::params::mode,
+  $service_ensure = $::sasyncd::params::service_ensure,
+  $service_enable = $::sasyncd::params::service_enable,
+  $service_flags = $::sasyncd::params::service_flags, 
+) inherits sasyncd::params {
 
+  if $service_ensure == 'running' {
+    $config_ensure = 'present'
+  } else {
+    $config_ensure = 'absent'
+  }
+
+  class { '::sasyncd::config':
+    ensure         => $config_ensure,
+    peers          => $peers,
+    sharedkey      => $sharedkey,
+    interface      => $interface,
+    interfacegroup => $interfacegroup,
+    flushmode      => $flushmode,
+    control        => $control,
+    listen_on      => $listen_on,
+    mode           => $mode,
+  }
+
+  class { '::sasyncd::service':
+    ensure => $service_ensure,
+    enable => $service_enable,
+    flags  => $service_flags,
+  }
+
+  Class['sasyncd::config'] ~>
+  Class['sasyncd::service']
 
 }
